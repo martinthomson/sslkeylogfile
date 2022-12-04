@@ -1,0 +1,95 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2022-12-04T01:35:36.617463+00:00",
+  "repo": "martinthomson/sslkeylogfile",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOIRczls5Dr_IR",
+      "title": "Add stronger prohibitions",
+      "url": "https://github.com/martinthomson/sslkeylogfile/pull/1",
+      "state": "OPEN",
+      "author": "martinthomson",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "For both old TLS versions and the use of this outside of testing and debugging.\r\n\r\nAs inspired by @emanjon.",
+      "createdAt": "2022-11-25T07:19:31Z",
+      "updatedAt": "2022-11-25T07:31:12Z",
+      "baseRepository": "martinthomson/sslkeylogfile",
+      "baseRefName": "main",
+      "baseRefOid": "2b899d8a842ffc629acb1ff66b654a51658d3684",
+      "headRepository": "martinthomson/sslkeylogfile",
+      "headRefName": "mmattssonn",
+      "headRefOid": "67ff7938098083e37d9860f171b5d0a06a14d242",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOIRczls5HKdaL",
+          "commit": {
+            "abbreviatedOid": "67ff793"
+          },
+          "author": "marten-seemann",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-11-25T07:31:12Z",
+          "updatedAt": "2022-11-25T07:31:12Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
+}
