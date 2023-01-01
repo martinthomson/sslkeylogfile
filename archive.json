@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-12-29T01:25:02.431187+00:00",
+  "timestamp": "2023-01-01T01:43:32.088592+00:00",
   "repo": "martinthomson/sslkeylogfile",
   "labels": [
     {
@@ -63,7 +63,7 @@
       "labels": [],
       "body": "For both old TLS versions and the use of this outside of testing and debugging.\r\n\r\nAs inspired by @emanjon.",
       "createdAt": "2022-11-25T07:19:31Z",
-      "updatedAt": "2022-11-25T07:31:12Z",
+      "updatedAt": "2022-12-30T18:37:19Z",
       "baseRepository": "martinthomson/sslkeylogfile",
       "baseRefName": "main",
       "baseRefOid": "2b899d8a842ffc629acb1ff66b654a51658d3684",
@@ -87,6 +87,19 @@
           "body": "",
           "createdAt": "2022-11-25T07:31:12Z",
           "updatedAt": "2022-11-25T07:31:12Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOIRczls5JgV1J",
+          "commit": {
+            "abbreviatedOid": "67ff793"
+          },
+          "author": "emanjon",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-12-30T18:37:18Z",
+          "updatedAt": "2022-12-30T18:37:18Z",
           "comments": []
         }
       ]
