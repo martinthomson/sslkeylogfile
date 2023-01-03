@@ -12,26 +12,26 @@ connection is described.  Recording secrets to a file in SSLKEYLOGFILE format
 allows diagnostic and logging tools that use this file to decrypt messages
 exchanged by TLS endpoints. 
     " name="description">
-<meta content="xml2rfc 3.15.2" name="generator">
+<meta content="xml2rfc 3.15.3" name="generator">
 <meta content="network transparency" name="keyword">
 <meta content="tls" name="keyword">
 <meta content="blockchain" name="keyword">
 <meta content="draft-thomson-tls-keylogfile-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.15.2
-    Python 3.10.5
+  xml2rfc 3.15.3
+    Python 3.10.9
     appdirs 1.4.4
     ConfigArgParse 1.5.3
     google-i18n-address 2.5.2
     html5lib 1.1
     intervaltree 3.1.0
     Jinja2 3.1.2
-    lxml 4.9.1
+    lxml 4.9.2
     MarkupSafe 2.1.1
     pycountry 22.3.5
     PyYAML 6.0
-    requests 2.27.1
-    setuptools 59.4.0
+    requests 2.28.1
+    setuptools 65.6.0
     six 1.16.0
     wcwidth 0.2.5
 -->
@@ -400,7 +400,7 @@ dl > dd > dl {
   margin-top: 0.5em;
   margin-bottom: 0;
 }
-dl .break {
+:is(dd, span).break {
   display: none;
 }
 
@@ -420,7 +420,7 @@ a[href]:hover {
 a[href].selfRef:hover {
   background-color: var(--highlight-color);
 }
-a.xref {
+a.xref:is(.cite, .auto), :is(#status-of-memo, #copyright) a {
   white-space: nowrap;
 }
 
@@ -432,7 +432,9 @@ tt, code, pre {
 tt, code {
   /* changing the font for inline elements leads to different ascender
      and descender heights; as we want to retain baseline alignment,
-     remove leading to avoid altering the final height of lines */
+     remove leading to avoid altering the final height of lines
+     note: this fails if these blocks take an entire line,
+     a different solution would be great */
   line-height: 0;
 }
 :is(h1, h2, h3, h4, h5, h6) :is(tt, code) {
@@ -1029,7 +1031,7 @@ svg :is([stroke="white"], [stroke^="#fff"]) {
 svg :is([fill="black"], [fill^="#000"], :not([fill])) {
   fill: var(--text-color);
 }
-svg :is([stroke="fill"], [fill^="#fff"]) {
+svg :is([fill="white"], [fill^="#fff"]) {
   fill: var(--background-color);
 }
 </style>
@@ -1040,11 +1042,11 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">SSLKEYLOGFILE</td>
-<td class="right">November 2022</td>
+<td class="right">January 2023</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Thomson</td>
-<td class="center">Expires 12 May 2023</td>
+<td class="center">Expires 7 July 2023</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1057,12 +1059,12 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-thomson-tls-keylogfile-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2022-11-08" class="published">8 November 2022</time>
+<time datetime="2023-01-03" class="published">3 January 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2023-05-12">12 May 2023</time></dd>
+<dd class="expires"><time datetime="2023-07-07">7 July 2023</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1115,7 +1117,7 @@ exchanged by TLS endpoints.<a href="#section-abstract-1" class="pilcrow">¶</a><
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 12 May 2023.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 7 July 2023.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1124,7 +1126,7 @@ exchanged by TLS endpoints.<a href="#section-abstract-1" class="pilcrow">¶</a><
 <a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
         </h2>
 <p id="section-boilerplate.2-1">
-            Copyright (c) 2022 IETF Trust and the persons identified as the
+            Copyright (c) 2023 IETF Trust and the persons identified as the
             document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.2-2">
             This document is subject to BCP 78 and the IETF Trust's Legal
@@ -1204,10 +1206,15 @@ format.  Note the use of "SSL" as this convention originally predates the
 adoption of TLS as the name of the protocol.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">This document describes the SSLKEYLOGFILE format.  This format can be used for
 TLS 1.2 <span>[<a href="#TLS12" class="cite xref">TLS12</a>]</span> and TLS 1.3 <span>[<a href="#TLS13" class="cite xref">TLS13</a>]</span>.  The format also
-supports earlier TLS versions, though use of earlier versions is strongly
-discouraged <span>[<a href="#RFC8996" class="cite xref">RFC8996</a>]</span>.  This format can also be used with DTLS
-<span>[<a href="#DTLS13" class="cite xref">DTLS13</a>]</span>, QUIC <span>[<a href="#RFC9000" class="cite xref">RFC9000</a>]</span><span>[<a href="#RFC9001" class="cite xref">RFC9001</a>]</span>, and protocols that also use
-the TLS key schedule.<a href="#section-1-3" class="pilcrow">¶</a></p>
+supports earlier TLS versions, though use of earlier versions is forbidden
+<span>[<a href="#RFC8996" class="cite xref">RFC8996</a>]</span>.  This format can also be used with DTLS <span>[<a href="#DTLS13" class="cite xref">DTLS13</a>]</span>, QUIC
+<span>[<a href="#RFC9000" class="cite xref">RFC9000</a>]</span><span>[<a href="#RFC9001" class="cite xref">RFC9001</a>]</span>, and protocols that also use the TLS key schedule.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">The artifact that this document describes - if made available to entities other
+than endpoints - completely undermines the core guarantees that TLS provides.
+This format is intended for use in systems where TLS only protects test data.
+While the access that this information provides to TLS connections can be useful
+for diagnosing problems while developing systems, this mechanism <span class="bcp14">MUST NOT</span> be
+used in a production system.<a href="#section-1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
