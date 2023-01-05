@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-01-03T01:23:03.909024+00:00",
+  "timestamp": "2023-01-05T01:34:21.901607+00:00",
   "repo": "martinthomson/sslkeylogfile",
   "labels": [
     {
@@ -56,24 +56,26 @@
       "id": "PR_kwDOIRczls5Dr_IR",
       "title": "Add stronger prohibitions",
       "url": "https://github.com/martinthomson/sslkeylogfile/pull/1",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "martinthomson",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "For both old TLS versions and the use of this outside of testing and debugging.\r\n\r\nAs inspired by @emanjon.",
       "createdAt": "2022-11-25T07:19:31Z",
-      "updatedAt": "2022-12-30T18:37:19Z",
+      "updatedAt": "2023-01-03T05:13:56Z",
       "baseRepository": "martinthomson/sslkeylogfile",
       "baseRefName": "main",
       "baseRefOid": "2b899d8a842ffc629acb1ff66b654a51658d3684",
       "headRepository": "martinthomson/sslkeylogfile",
       "headRefName": "mmattssonn",
       "headRefOid": "67ff7938098083e37d9860f171b5d0a06a14d242",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-01-03T05:13:56Z",
+      "mergedAt": "2023-01-03T05:13:56Z",
+      "mergedBy": "martinthomson",
+      "mergeCommit": {
+        "oid": "58dbc0ed46d3096b89eed29859ace417deca8e7f"
+      },
       "comments": [],
       "reviews": [
         {
